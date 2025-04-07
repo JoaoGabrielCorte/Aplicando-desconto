@@ -1,0 +1,30 @@
+
+*Projeto simulado ABAP no vs code 
+*Obejetivo: treinar logica de programação em ABAP sem um sistema
+
+
+*Aqui definimos que esse é um projeto ABAP
+REPORT zcalculo_desconto. 
+
+* Derclaração de variaveis 
+DATA: 
+    v_valor_compra      TYPE p DECIMALS 2,
+    v_percentual_desc   TYPE p DECIMALS 2,
+    v_valor_desconto    TYPE p DECIMALS 2, 
+    v_total_final       TYPE p DECIMALS 2. 
+
+*entrada de dados 
+INITIALIZATION. 
+    v_valor_compra = 100,00.
+    v_percentual_desc = 10,00. " 10% de desconto 
+
+*Processamento de dados (simulado)
+START OF SELECTION. 
+    v_valor_desconto = v_valor_compra * v_percentual_desc / 100. 
+    v_total_final = v_valor_compra - v_valor_desconto
+
+*Saida de dados
+WRITE: / 'Valor da compra: R$', v_valor_compra,
+       / 'Desconto aplicado: ', v_percentual_desc, '%',
+       / 'Valor do desconto: R$', v_valor_desconto,
+       / 'Total a pagar: R$', v_total_final.
